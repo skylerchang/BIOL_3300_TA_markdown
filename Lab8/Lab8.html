@@ -1,0 +1,417 @@
+<!DOCTYPE html><html><head>
+      <title>Lab8</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/haiyangchang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="biol3300-lab8-f21">BIOL*3300 Lab8 F21</h1>
+
+<h2 class="mume-header" id="variant-calling-practice-on-compute-canada">Variant Calling Practice on Compute Canada</h2>
+
+<h3 class="mume-header" id="background-review">Background review</h3>
+
+<p>In this lab, we will continue the process of characterizing genotypes. This series of labs is based on the published protocol:</p>
+<p><a href="https://www.nature.com/articles/nprot.2017.123">Rochette, N.C. and Catchen, J.M., 2017. Deriving genotypes from RAD-seq short-read data using Stacks. Nature Protocols, 12(12), pp.2640-2659.</a></p>
+<p>In the last lab, you mapped reads to a fish reference genome. To do this, we have downloaded the reference genome and created the index. The software bwa was used to align reads. The output .bam/.sam file told you where each read aligned and the details of that alignment.</p>
+<p>The purpose of this lab is to identify a sample&#x2019;s genotype at different positions across the reference genome. We will use the pstacks program from the stacks software suite to do the analysis. The pstacks software collects all the reads that overlap a nucleotide in the reference genome. From these reads, the genotype is determined at a nucleotide site.</p>
+<h3 class="mume-header" id="step7-pstacks-analysis-of-snps-and-alleles">Step7 Pstacks analysis of SNPs and alleles</h3>
+
+<h4 class="mume-header" id="obtaining-reads-and-alignments">Obtaining reads and alignments</h4>
+
+<p>Move into the stacks_ref directory and load a version of the stacks software that supports pstacks.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ~/scratch/Biol3300/SNP_lab/stacks_ref
+    module load nixpkgs/16.09 gcc/5.4.0 stacks/1.46
+</code></pre><p>Previously, we only mapped some of the samples reads. If you recall, in the raw folder, we had three lanes of reads. Lane 1 contains 10 files of sequences that are all from the same fish population, South Jetty, but we only used one file. To get all the reads that map to a sample, we would need to sorting the barcodes from all the 10 files and align them to the genome.</p>
+<p>In order to analyze a sample&#x2019;s genotype at different positions across the reference genome, we demultiplexed and mapped reads from all 10 fastq files (001-010.fq.gz) of lane 3 in the raw directory. One of fish samples, <strong>cs_1335.01</strong> from the lane 3 folder, will be used in this lab. The process of mapping all reads to this sample and aligning reads to the genome were exactly the same as we previously did on lab 6 and lab 7. To save time, you can copy sample <strong>cs_1335.01.fq.gz</strong> and its <strong>bam file</strong> to your directories:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cp /scratch/hchang02/Biol33300/SNP_lab/cleaned/cs_1335.01.fq.gz ~/scratch/Biol3300/SNP_lab/cleaned
+    cp /scratch/hchang02/Biol3300/SNP_lab/alignments/cs_1335.01.bam ~/scratch/Biol3300/SNP_lab/alignments
+</code></pre><h4 class="mume-header" id="running-pstacks">Running pstacks</h4>
+
+<p>We will first define some arguments for pstacks.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    sample=cs_1335.01
+    sample_index=1
+    bam_file=../alignments/$sample.bam
+    pstacks -f $bam_file -i $sample_index -o ./  
+</code></pre><p><strong>sample</strong> is our sample name<br>
+<strong>sample_index</strong> is the unique identifier for the sample. We only have one sample, but we would set the sample index to &apos;1&apos; for the first sample file, &apos;2&apos; for the second, and so on if had more.</p>
+<p>This will give you the following output:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>pstacks parameters selected:
+  Alignments file: ./cs_1335.01.aligned.sorted.bam
+  Output directory: ./
+  Sample ID: 1
+  Min locus depth: 3
+  Max clipped proportion: 0.15
+  Min mapping quality: 10
+  Model: snp
+    Model alpha: 0.05
+Reading alignments...
+Done reading alignment records:
+  Kept 1088586 primary alignments
+  Skipped 153728 (12.2%) primary alignments with insufficient mapping qualities
+  Skipped 21608 (1.7%) excessively soft-clipped primary alignments
+  Skipped 7995 secondary alignments
+  Skipped 0 supplementary alignments
+  Skipped 38245 unmapped reads
+Collapsed reads into 132496 stacks.
+Created 42145 loci; mean coverage is 25.83 (stdev: 15.87, max: 1038).
+Discarded 2671 low coverage loci comprising 3451 (0.3%) reads.
+Kept 39474 loci; mean coverage is 27.49 (stdev: 15.01, max: 1038).
+Identifying polymorphic sites and calling consensus sequences...done. (0 loci were blacklisted.)
+Writing tags, models, snps, and alleles files...
+pstacks is done.
+</code></pre><p>From the log files of pstacks, the number of primary alignments (i.e., 1088586) were kept for the analysis. Dividing this number by the initial number of reads (i.e, 1302521 ) of the sample gives the percentage of reads that remain after alignment and filtering. This percentage is one of the main statistics to consider in assessing the effectiveness of an alignment protocol. In our case, the percentage of used reads is 83.57%.</p>
+<p>Count the number of reads that are in the file &apos;cs_1335.01.fq.gz&apos;. There are different ways of doing this. I&#x2019;d recommend matching the number of lines in the file that start with @ and counting them. The initial number of reads (1302521).</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    zless ../cleaned/cs_1335.01.fq.gz | grep &apos;^@&apos; | wc -l 
+    zgrep -c &apos;^@&apos; ../cleaned/cs_1335.01.fq.gz
+</code></pre><p><strong>Note:</strong> Percentages of aligned reads under 50% should be a trigger to reconsider the alignment protocol. Such low numbers may be caused, notably, by a misuse of the alignment program, a poor choice of parameters, or a very incomplete and/or distant reference genome.</p>
+<p>Still in the log files of pstacks, check the average per-locus coverage. These numbers should provide an estimate of the actual sequencing coverage that was achieved. Per-locus coverage for sample cs_1335.01 was 27.49.</p>
+<p><strong>Note:</strong> Coverage, or the number of reads that map to a reference genome position, strongly affects the quality of genotype calls. If samples have low-coverage, genotypes may be called as &quot;unknown&quot; or be miscalled.</p>
+<h3 class="mume-header" id="step8-reading-the-fields-mean-in-stacks-output-files">Step8 Reading the fields mean in Stacks output files</h3>
+
+<p>After its successful completion, pstacks should have created four files for each sample in addition to the screen output ($sample.tags.tsv.gz, $sample.models.tsv.gz, $sample.snps.tsv.gz, and $sample.alleles.tsv.gz).</p>
+<h4 class="mume-header" id="1-sampletagstsv-assembled-loci">1. sample.tags.tsv: Assembled loci</h4>
+
+<p>A &apos;tag&apos; is another name for a &apos;read&apos;. This file shows where every tag aligns, e.g. at which locus, and the genotype call.</p>
+<center>
+<img src="tags.jpg" alt="drawing" width="800">
+</center>
+<p>We can check the file with:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    zless cs_1335.01.tags.tsv.gz 
+</code></pre><p>Several reads/tags such as primary 0, primary 1 etc. aligned to the same genomic location on chromosome/contig &quot;groupIII&quot; from the reference genome at position 10,005,320. The consensus sequence for this sample, based on all reads, at this site is shown.</p>
+<p>The predicted genotype of this individual is shown on the line &apos;model&apos;. The model is &quot;O&quot; for homozygous, &quot;E&quot; for heterozygous, and &quot;U&quot; for unknown. It is hard to see, but position 15 is deemed heterozygous with a &apos;E&apos; labeled. Investigate this record on your machine by looking at more of the aligned reads.</p>
+<p>A figure of the first locus can help you understand:</p>
+<center>
+<img src="snps2.jpg" alt="drawing" width="800">
+</center>
+<h4 class="mume-header" id="2-samplesnpstsv-model-calls-from-each-locus">2. sample.snps.tsv: Model calls from each locus</h4>
+
+<p>This file does not include the reads. It just has the summary of model calls as seen in the tags file.</p>
+<center>
+<img src="snps.jpg" alt="drawing" width="800">
+</center>
+<p>We see the nucleotide calls for cs_1335.01 in this case at locus 1. We see the heterozygote again.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    zless cs_1335.01.snps.tsv.gz | head -n 20
+</code></pre><p>The output is:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>0	1	1	0	O	44.36	T	-		
+0	1	1	1	O	44.36	G	-		
+0	1	1	2	O	44.36	C	-		
+0	1	1	3	O	44.36	A	-		
+0	1	1	4	O	44.36	G	-		
+0	1	1	5	O	44.36	G	-		
+0	1	1	6	O	44.36	A	-		
+0	1	1	7	O	44.36	T	-		
+0	1	1	8	O	44.36	G	-		
+0	1	1	9	O	44.36	C	-		
+0	1	1	10	O	44.36	A	-		
+0	1	1	11	O	44.36	G	-		
+0	1	1	12	O	44.36	A	-		
+0	1	1	13	O	44.36	G	-		
+0	1	1	14	E	-17.36	C	G		
+0	1	1	15	O	44.36	C	-		
+0	1	1	16	O	44.36	G	-		
+0	1	1	17	O	44.36	G	-		
+0	1	1	18	O	44.36	C	-
+</code></pre><p>As we found, the SNP site is on the 15th nucleotide (Note here starts with 0).</p>
+<h4 class="mume-header" id="3-sampleallelestsv-haplotypesalleles-recorded-from-each-locus">3. sample.alleles.tsv: Haplotypes/alleles recorded from each locus</h4>
+
+<p>This file lists the different haplotypes/alleles recorded from each locus.</p>
+<center>
+<img src="alleles.jpg" alt="drawing" width="800">
+</center>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    zless cs_1335.01.alleles.tsv.gz | head  
+</code></pre><p>The output is:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>0	1	1	C	68.75	22
+0	1	1	G	31.25	10
+0	1	4	CC	42.86	15
+0	1	4	GT	57.14	20
+0	1	13	C	39.47	15
+0	1	13	T	60.53	23
+0	1	15	A	72.73	8
+0	1	15	G	27.27	3
+0	1	20	A	41.18	14
+</code></pre><p>At locus 1, there were two alleles at position 15. These are represented here. In the tags file, the first locus has an allele G found on 10 reads compared to C on 22 reads.</p>
+<h3 class="mume-header" id="assignment-for-lab-8">Assignment for Lab 8</h3>
+
+<p><strong>Please perform the pstacks unit of Stacks on sample cs_1335.02.fq.gz with its bam file. You need to copy cs_1335.02.fq.gz and cs_1335.02.bam from my directories as the example cs_1335.01 in this tutorial.</strong></p>
+<p><strong>Give the aligned reads percentage and per-locus coverage on sample cs_1335.02.fq.gz.</strong><br>
+<strong>How does this sample compare to sample cs_1335.01?</strong><br>
+<strong>Using the output files, find a heterozygous site within the sample and give its genomic position.</strong></p>
+<h3 class="mume-header" id="reference">Reference</h3>
+
+<p>These lab materials are from the following papers and website:</p>
+<ol>
+<li><a href="https://www.nature.com/articles/nprot.2017.123">Rochette, N.C. and Catchen, J.M., 2017. Deriving genotypes from RAD-seq short-read data using Stacks. Nature Protocols, 12(12), pp.2640-2659.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/23718143/">The population structure and recent colonization history of Oregon threespine stickleback determined using restriction-site associated DNA-sequencing. Mol. Ecol. 22, 2864&#x2013;2883 (2013).</a></li>
+<li><a href="https://catchenlab.life.illinois.edu/stacks/manual-v1/">https://catchenlab.life.illinois.edu/stacks/manual-v1/</a></li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

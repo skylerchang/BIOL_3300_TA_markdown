@@ -1,0 +1,430 @@
+<!DOCTYPE html><html><head>
+      <title>Lab11</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/haiyangchang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="biol3300-lab11-f21">BIOL*3300 Lab11 F21</h1>
+
+<h2 class="mume-header" id="differential-gene-expression-analysis-dge">Differential Gene Expression Analysis (DGE)</h2>
+
+<h3 class="mume-header" id="background-review">Background review</h3>
+
+<p>In the last lab, we processed read counts and investigated how samples cluster using PCA and hierarchical clustering methods in R. In addition to performing such exploratory analyses, statistical tests may be used to decide whether a given gene&#x2019;s expression differs between two (or more) conditions based on the information gleaned from as little as two or three replicates per condition.</p>
+<p>The two basic tasks of all differential gene expression (DGE) tools are to:</p>
+<ol>
+<li>Estimate the magnitude of differential expression between two or more conditions based on read counts from replicated samples, i.e., calculate the fold change of read counts, taking into account the differences in sequencing depth.</li>
+<li>Estimate the significance of the difference and correct for multiple testing.</li>
+</ol>
+<p>In this lab, we assess the difference in expression between the control and treatment groups on a gene-by-gene basis.</p>
+<h3 class="mume-header" id="estimating-the-difference-between-read-counts-for-a-given-gene">Estimating the difference between read counts for a given gene</h3>
+
+<p>To determine whether the read count differences between different conditions for a given gene are greater than expected by chance, DGE tools must find a way to estimate that difference using the information from the replicates of each condition. The R package, DESeq2, uses regression models that are applied to every single gene. Linear regression models usually take the following typical form: Yij = b0 +b1*xi +eij</p>
+<p>Here, Y will entail all read counts for a given gene in individual j of treatment group i. b0 the intercept; xi is the condition (for RNA-seq, this is often a discrete factor, e.g., &quot;WT&quot;  or &#x201C;mutant&quot;, xi would be 0 or 1), b1 is the coefficient that captures the difference between the different conditions. eij is the residual term capturing the deviation from expected and observed values.</p>
+<p>The model shown above could be fitted in R using the function lm(rlog.norm~genotype), where rlog.norm are the Y gene expression values across WT and mutant samples, x. The model will return estimates for both b0 and b1, so that the average expression values of the baseline genotype (e.g., WT = 0) would correspond to Y = b0 + b1 * 0 + e. This is equivalent to Y = b0 (assuming that e is on average zero), thereby demonstrating that the intercept (b0) can be interpreted as the average of our baseline group. b1 represents the difference between groups and will be the coefficient whose closeness to zero will be evaluated during the statistical testing step.</p>
+<h3 class="mume-header" id="testing-the-null-hypothesis">Testing the null hypothesis</h3>
+
+<p>The null hypothesis is that there is no systematic difference between the average read count values of the different conditions for a given gene. Which test is used to assign a p-value depends on the tool, but you can think of the tests as some variation of the well- known t&#x2212;test (How dissimilar are the means of two populations?) or ANOVA (How well does a reduced model capture the data when compared to the full model with all coefficients?).</p>
+<p>Once you&#x2019;ve obtained a list of p-values for all the genes of your data set, it is important to realize that you just performed the same type of test likely for thousands and thousands of genes. That means, that even if you decide to focus on genes with a p-value smaller than 0.05, if you&#x2019;ve looked at 10,000 genes that do not differ in expression your final list may contain 0.05 * 10,000 = 500 false positive hits. To guard yourself against reporting false positives, analysis tools offer a correction for the multiple hypotheses you tested, e.g. in the form of the Benjamini-Hochberg formula that returns genes significant at a given false discovery rate (FDR). You should work with the adjusted p-values rather than the original ones to identify genes for downstream analyses and follow-up studies.</p>
+<h3 class="mume-header" id="running-dge-analysis-tools">Running DGE analysis tools</h3>
+
+<h4 class="mume-header" id="deseq2-workflow">DESeq2 workflow</h4>
+
+<p>For our example data set, we would like to compare two treatment groups: &quot;Mov10 over expressed&quot; and &quot;control&quot; samples. When we examine a gene&#x2019;s fold change, we use the control denominator for the fold change calculation. RNA helicase MOV10 has been implicated in miRNA-mediated translational suppression. MOV10 is thought to facilitate translation suppression by miRNA pathway.</p>
+<p>Recall from last lab that we developed a data structure with read counts across all genes across the six samples. This data, RNA_seq_featurecounts.txt, is in the lab10 folder.</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code>&gt; library(DESeq2)
+&gt; readcounts &lt;- read.table(&quot;~/Downloads/RNA_seq_featurecounts.txt&quot;,header=TRUE)
+&gt; row.names(readcounts) &lt;- readcounts$Geneid
+&gt; readcounts &lt;- readcounts[,-c(1:6)]
+&gt; names(readcounts) &lt;- c(&quot;Control_1&quot;,&quot;Control_2&quot;,&quot;Control_3&quot;,&quot;Mov10_1&quot;,&quot;Mov10_2&quot;,&quot;Mov10_3&quot;)
+
+&gt; sample_info&lt;-data.frame(condition=gsub(&quot;_[0-9]+&quot;,&quot; &quot;,names(readcounts)),row.names=names(readcounts))
+&gt; DESeq.ds &lt;- DESeqDataSetFromMatrix(countData = readcounts,
+                                 colData = sample_info, design = ~ condition)
+
+#The raw count data can be seen using counts(DESeq.ds)
+#Counts cannot be directly compared between samples if the samples have different readdepths.
+
+#Use colSums(counts(DESeq.ds)) to investigate if you think the number of mapped reads per 
+#sample needs correction.
+
+&gt; DESeq.ds &lt;- estimateSizeFactors(DESeq.ds)
+&gt; sizeFactors(DESeq.ds)
+</code></pre><h4 class="mume-header" id="running-the-de-analysis">Running the DE analysis</h4>
+
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code>&gt; DESeq.ds &lt;- estimateDispersions(DESeq.ds)
+&gt; DESeq.ds &lt;- nbinomWaldTest(DESeq.ds)
+</code></pre><p>These methods test for a significant difference between the mean expression level of every gene. As with the method described above, genes with large differences in their means between conditions and low differences within conditions are unlikely to be equally expressed between conditions. These genes receive low p values and low adjusted P values.</p>
+<p>We can see the results for genes using the command.</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code>&gt; results(DESeq.ds)
+</code></pre><p>Here we take the header and the first gene:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>log2 fold change (MLE): condition Mov10. vs Control. 
+Wald test p-value: condition Mov10. vs Control. 
+DataFrame with 2330 rows and 6 columns
+           baseMean log2FoldChange     lfcSE      stat    pvalue      padj
+          &lt;numeric&gt;      &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt;
+WASH7P     1.271174      -1.794829   2.03564 -0.881702  0.377938        NA
+FAM138F    0.000000             NA        NA        NA        NA        NA
+FAM138A    0.000000             NA        NA        NA        NA        NA
+OR4F5      0.000000             NA        NA        NA        NA        NA
+LOC729737  0.481304       0.673273   3.12070  0.215745  0.829187        NA
+...             ...            ...       ...       ...       ...       ...
+SH3BP5L    0.141911       -1.04999   4.08047  -0.25732  0.796932        NA
+MIR3124    0.000000             NA        NA        NA        NA        NA
+ZNF672     0.000000             NA        NA        NA        NA        NA
+ZNF692     0.209820       -1.04999   4.08047  -0.25732  0.796932        NA
+PGBD2      0.000000             NA        NA        NA        NA        NA
+</code></pre><p>We can filter the results of the analysis to only report genes differentially expressed after correcting.</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code># tells you which types of values can be extracted with results()
+&gt; resultsNames(DESeq.ds) 
+&gt; DGE.results &lt;- results(DESeq.ds,
+                       independentFiltering = TRUE,
+                       alpha = 0.05)
+# first line indicates which comparison was done for the log2FC
+&gt; summary(DGE.results)
+# the DESeqResult object can basically be handled like a data.frame
+&gt; table(DGE.results$padj &lt; 0.05)
+</code></pre><p>NAs in the padj column (but values in both log2FC and pvalue) are indicative of that gene being filtered out by the independent filtering [because it was very lowly expressed].</p>
+<h4 class="mume-header" id="exploratory-plots-following-dge-analysis">Exploratory plots following DGE analysis</h4>
+
+<p>Histograms are a simple and fast way of getting a feeling for how frequently certain values are present in a data set. A common example is a histogram of adjusted p-values for each gene comparison.</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code>&gt; hist(DGE.results$padj,
+    col = &quot;grey&quot; , border = &quot;white&quot; , xlab = &quot; &quot; , ylab = &quot; &quot; ,
+    main = &quot;frequencies of adjusted p - values&quot;)
+</code></pre><center>
+<img src="histogram2.jpg" alt="drawing" width="700">
+</center>
+<p>MA plots were originally developed for visualizing cDNA microarray results, but they are also useful for RNA-seq analyses. The MA plot provides a global view of the relationship between the expression change between conditions (log ratios, M) and the average expression level of  the genes (average mean, A). The log2 fold change is on the y-axis over the mean of normalized counts. Genes that pass  the significance threshold (adjusted p.value &lt;0.05) are colored in red.</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code>&gt; plotMA(DGE.results, alpha = 0.05, colNonSig = &quot;gray60&quot;, colSig = &quot;red&quot;,
+       main = &quot;Test: adjusted p.value &lt; 0.05&quot;, ylim = c(-4,4))
+</code></pre><center>
+<img src="maplot2.jpg" alt="drawing" width="800">
+</center>
+<p>Heatmaps are a popular means to visualize the expression values across the individual samples. The following commands can be used to obtain heatmaps for rlog-normalized read counts for genes that show differential expression with adjusted p-values &lt;0.05.</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code># load the library with the aheatmap () function
+&gt; install.packages(&quot;NMF&quot;)
+&gt; install.packages(&quot;pheatmap&quot;)
+&gt; library(NMF)
+&gt; library(pheatmap)
+
+# aheatmap needs a matrix of values , e.g. , a matrix of DE genes with the
+# transformed read counts for each replicate
+# sort the results according to the adjusted p-value
+&gt; DGE.results.sorted &lt;- DGE.results[order(DGE.results$padj), ]
+
+# identify genes with the desired adjusted p-value cut-off
+&gt; DGEgenes &lt;- rownames(subset(DGE.results.sorted , padj &lt; 0.05))
+
+# extract the normalized read counts for DE genes into a matrix
+&gt; hm.mat_DGEgenes &lt;- log.norm.counts[DGEgenes, ]
+
+# plot the normalized read counts of DE genes sorted by the adjusted p-value
+&gt; pheatmap(hm.mat_DGEgenes , Rowv = NA , Colv = NA)
+</code></pre><center>
+<img src="heatmap1.jpg" alt="drawing" width="600">
+</center>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code># combine the heatmap with hierarchical clustering
+# add dendrograms to rows and column
+&gt; pheatmap(hm.mat_DGEgenes,
+    Rowv = TRUE , Colv = TRUE,                
+    distfun = &quot;euclidean&quot; , hclustfun = &quot;average&quot;)
+</code></pre><center>
+<img src="Hm2.jpg" alt="drawing" width="800">
+</center>
+<p>We can scale the read counts per gene to emphasize the sample-type-specific differences. Note the same information can be displayed and interpreted in quite different ways!</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code># scale the read counts per gene to emphasize the sample-type-specific
+# differences
+&gt; pheatmap (hm.mat_DGEgenes ,
+    Rowv = TRUE , Colv = TRUE ,
+    distfun = &quot;euclidean&quot; , hclustfun = &quot;average&quot;,
+    scale = &quot;row&quot; ) 
+# values are transformed into distances from the center
+# of the row - specific average : ( actual value - mean of the group ) /
+# standard deviation
+</code></pre><center>
+<img src="Hm3.jpg" alt="drawing" width="800">
+</center>
+<p>When you finish this lab session, you can delete these packages to save your storage space in your computer:</p>
+<pre data-role="codeBlock" data-info="{r}" class="language-"><code>&gt; remove.packages(c(&quot;DEseq2&quot;,&quot;ggplot2&quot;,&quot;pheatmap&quot;,&quot;NMF&quot;)) 
+</code></pre><h3 class="mume-header" id="assignment-for-lab-11">Assignment for Lab 11</h3>
+
+<p><strong>Given our description of <a href="https://www.ncbi.nlm.nih.gov/pubmed/25464849">Kenny PJ et al., Cell Rep 2014</a>, what gene is drastically different and why does this make sense given the experiment?</strong></p>
+<h3 class="mume-header" id="references">References</h3>
+
+<p>These lab materials are derived from the following website:</p>
+<ol>
+<li><a href="http://www.ncbi.nlm.nih.gov/pubmed/25464849">http://www.ncbi.nlm.nih.gov/pubmed/25464849</a></li>
+<li><a href="https://chagall.med.cornell.edu/RNASEQcourse/Intro2RNAseq.pdf">https://chagall.med.cornell.edu/RNASEQcourse/Intro2RNAseq.pdf</a></li>
+<li><a href="https://github.com/friedue/course_RNA-seq2019/tree/master/Day04">https://github.com/friedue/course_RNA-seq2019/tree/master/Day04</a></li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

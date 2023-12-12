@@ -1,0 +1,453 @@
+<!DOCTYPE html><html><head>
+      <title>Lab6</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/haiyangchang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="biol3300-lab6-f21">BIOL*3300 Lab6 F21</h1>
+
+<h2 class="mume-header" id="variant-calling-practice-on-compute-canada">Variant Calling Practice on Compute Canada</h2>
+
+<h4 class="mume-header" id="background">Background</h4>
+
+<p>In this lab, we will initiate the process of analyzing short read data to call single nucleotide polymorphisms. This series of labs is based on the published protocol:</p>
+<p><a href="https://www.nature.com/articles/nprot.2017.123">Rochette, N.C. and Catchen, J.M., 2017. Deriving genotypes from RAD-seq short-read data using Stacks. Nature Protocols, 12(12), pp.2640-2659.</a></p>
+<p>The authors work on population genetics and are interested in the factors that have affected fish populations. We use the sequencing data from their paper:</p>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/23718143/">The population structure and recent colonization history of Oregon threespine stickleback determined using restriction-site associated DNA-sequencing. Mol. Ecol. 22, 2864&#x2013;2883 (2013).</a></p>
+<p>In our case, we are interested in the analyses to obtain SNPs not the population genetics analyses. The data set includes 78 samples from four populations along the coast of Oregon (USA), of which two are oceanic (&#x2018;Cushman Slough&#x2019; (CS) and &#x2018;South Jetty&#x2019; (SJ)) and two are freshwater (&#x2018;Winchester Creek&#x2019; (WC) and &#x2018;Pony Creek Reservoir&#x2019; (PCR)). We will work with a small number of samples to show how the process works.</p>
+<h3 class="mume-header" id="lab-preparation-of-the-environment-and-of-the-data">Lab Preparation of the environment and of the data</h3>
+
+<p>It is good to be organized, so you don&#x2019;t spend too much time looking for things either now or in the future.</p>
+<h4 class="mume-header" id="step1-create-a-directory-and-subdirectories-for-the-analysis">Step1 Create a directory and subdirectories for the analysis</h4>
+
+<p>Within your scratch/Biol3300 directory, create the SNP_lab directory, so it has 7 subdirectories within it. The purpose of these directories will become clear.</p>
+<p>The structure of SNP_lab directory:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    SNP_lab/
+        alignments/
+        cleaned/
+        genome/
+        info/
+        raw/
+        stacks_ref/
+        tests_ref/
+</code></pre><p>I have created this SNP_lab directory and you can copy that to your scratch/Biol3300 folder directly with:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cp -r /scratch/hchang02/Biol3300/SNP_lab/ ~/scratch/Biol3300
+</code></pre><h4 class="mume-header" id="step2-starting-with-some-data">Step2 Starting with some data</h4>
+
+<p>Sequences from three Illumina lanes are already in the raw folder, and if you list the contents of this directory:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ~/scratch/Biol3300/SNP_lab/raw
+    ls
+</code></pre><p>You will see:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    lane1/
+    lane2/
+    lane3/   
+</code></pre><p>Let&apos;s navigate into the lane 1 directory. These files are compressed and have the suffix &quot;.fq.gz&quot; which means they are compressed fastq files.</p>
+<p>You can take a look at compressed files without decompressing them by using the zless command. This is &apos;less&apos; applied to compressed files. Press q to quit from zless. Similarly, you can use zcat.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd lane1
+    zless lane1_NoIndex_L001_R1_001.fq.gz
+</code></pre><h5 class="mume-header" id="fastq-file">FASTQ file</h5>
+
+<p>Fastq format was developed by Sanger institute in order to group together sequence and its quality scores (Q: phred quality score). In fastq files each entry is associated with 4 lines.</p>
+<p><strong>Line 1</strong> begins with a &apos;@&apos; character and is a sequence identifier and information about the read<br>
+<strong>Line 2</strong> The actual DNA sequence<br>
+<strong>Line 3</strong> begins with a &apos;+&apos; character and is optionally followed by the same sequence identifier (and any additional description) again.<br>
+<strong>Line 4</strong> encodes the quality values for the sequence in Line 2, and must contain the same number of symbols as letters in the sequence.</p>
+<p>We can view the first complete read in one of the files our dataset by using head:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    zless lane1_NoIndex_L001_R1_001.fq.gz | head -n 4 
+</code></pre><p>The output is:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>@HWI-ST0747:233:C0RH3ACXX:1:1101:10000:10465 1:N:0:
+GGAGCAGAGAGGAGACTAAAGGGGAGCAGAGGGAAGACTAAAGGGGAGCAGAGGGAAGACTAAAGGGGAGCAGAGGAGAGACTAAAGGGGAGCAGAGAGGA
++
+CCCFFFFFHHHHHJJJJJJIJJJJIJJGIGIIJ@GHIJJJJJJIJJGHGHHHHFF8BCEEECDDDCDDB@BDDCDBA@BDDDDDDDDDDD-&lt;B?C??9?@8
+</code></pre><p><strong>But what does this quality score mean?</strong><br>
+A quality score (PHRED scale) for each base pair. It indicates how confident we can be that the base was sequenced and identified correctly.<br>
+Q = -10log&#xAD;10(p), where p is the probability that the corresponding base call is incorrect.</p>
+<center>
+<img src="qscore.jpg" alt="drawing" width="800">
+</center>
+The numerical value assigned to each of these characters depends on the sequencing platform that generated the reads. The sequencing machine used to generate our data uses the standard Sanger quality PHRED score encoding, using Illumina version 1.8 onwards. Each character is assigned a quality score between 0 and 41 as shown in the chart below.
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>Quality encoding: !&quot;#$%&amp;&apos;()*+,-./0123456789:;&lt;=&gt;?@ABCDEFGHIJ
+                   |         |         |         |         |
+Quality score:    01........11........21........31........41
+</code></pre><p>Now let&apos;s decompress the file:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    gunzip lane1_NoIndex_L001_R1_001.fq.gz 
+</code></pre><ul>
+<li>How much smaller was the compressed file compared to this file?</li>
+<li>What is the last read in the lane1_NoIndex_L001_R1_001.fq file? How confident are you in this read?</li>
+</ul>
+<h4 class="mume-header" id="step3-barcodes-files">Step3 Barcodes files</h4>
+
+<p>In RADseq and GBS, the sequencing machine produces more sequences than we would want for a single sample. The clever solution was to attach a short series of nucleotides that are unique to each sample at the beginning and ending of each sample&#x2019;s cDNA. One pools the samples before sequencing. After sequencing, one sorts the sequences based on their barcodes into their proper sample.</p>
+<p>There is a barcodes file for each lane in the <strong>info/</strong>.<br>
+In the lane 1 folder there are 10 files, and we are looking at one of them. We will be dealing with part of lane 1, R1_001. Let&apos;s check the barcodes file for lane1:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ../../info
+    head barcodes.lane1.tsv
+</code></pre><p>The output is</p>
+<pre data-role="codeBlock" data-info class="language-"><code>CTCGCC  sj_1819.35
+GACTCT  sj_1819.31
+GAGAGA  sj_1819.32
+GATCGT  sj_1819.33
+GCAGAT  sj_1819.34
+GCCGTA  sj_1819.36
+GCGACC  sj_1819.37
+GCGCTG  sj_1819.38
+GCTCAA  sj_1819.39
+GGACTT  sj_1819.40
+</code></pre><ul>
+<li>sj refers to &quot;South Jetty&quot;, a location noted above.</li>
+<li>We can see that sample 1819.35 was &quot;barcoded&quot; with CTCGCC.</li>
+</ul>
+<p>Both RADSeq and GBS use restriction enzymes. We expect all reads to start with a 6-nt barcode, followed by the six nucleotides (TGCAGG) that should remain of the SbfI restriction site (CC^TGCAGG) in the DNA fragments after ligation.</p>
+<p>The expected read structure is a total read length of 101, as following:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>&lt;6-nt barcode&gt;TGCAGG&lt;unique 89-nt sequence&gt; 
+</code></pre><p>Look at the first four reads in the file lane1_NoIndex_L001_R1_001.fq. Do you see the TGCAGG nucleotides following the barcode, as expected?</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ../raw/lane1
+    head -n 16 lane1_NoIndex_L001_R1_001.fq
+</code></pre><p>We can see that sample 1819.35 from &quot;South Jetty&quot;, a location noted above, was &quot;barcoded&quot; with CTCGCC, and let&#x2019;s see if we have reads that start with this barcode in the file.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    grep -E &apos;^CTCGCC&apos; lane1_NoIndex_L001_R1_001.fq
+</code></pre><p>Type control c to exit! How many reads are with this barcode?</p>
+<p>Compare the number of reads with this barcode compared to a non-barcode sequence such as GGGGGG.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    grep -E &apos;^GGGGGG&apos; lane1_NoIndex_L001_R1_001.fq | wc -l 
+</code></pre><h4 class="mume-header" id="step4-clean-and-demultiplex">Step4 Clean and demultiplex</h4>
+
+<p>Move into your <strong>cleaned/</strong> directory.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ../../cleaned
+</code></pre><p>We will use software to sort our data. The program we will run is called process_radtags. It is part of the <strong>Stacks</strong> software package.</p>
+<h5 class="mume-header" id="environment-modules-of-compute-canada">Environment modules of Compute Canada</h5>
+
+<p>Using modules is generally something that is used on Compute Canada sever and generally installed by the system&#x2019;s administrator. On your own machine, you would need to install the software. Happily, stacks is installed on the Compute Canada server. It is part of a module system. The module system allows to only &apos;load&apos; software when needed as well as to make multiple versions of software available at the same time. It basically changes your PATH variable (and possibly other environment variables) so that the shell searches the correct directories for the software you want to use.</p>
+<p>First, take a look at all the software available on Graham:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    module avail 
+</code></pre><p>This is a list of all the software (with different versions) that you can access. The format of &apos;modules&apos; is software/version here you can see many softwares have their different versions installed. When you load a module without specifying a version, it will load the default (generally the latest) version.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    module load stacks
+</code></pre><p>Now, call the process_radtags unit of Stacks:</p>
+<ul>
+<li>(-p) The path to a directory that contains the files you want to process.</li>
+<li>(-b) The barcodes file.</li>
+<li>(-o) The place you want the processed files to go.</li>
+<li>(-e) The restriction enzyme used in library preparation (so it can be filtered out)</li>
+<li>(-c) The option to remove any sequences with Ns</li>
+<li>(-q) The option to discard reads with low quality (Q) scores.</li>
+<li>(-r) The option to rescue barcodes and RAD-Tags</li>
+</ul>
+<p>To save the time, we create an test folder and copy lane1_NoIndex_L001_R1_001.fq file into this folder:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    mkdir ../raw/lane1/test/
+    cp ../raw/lane1/lane1_NoIndex_L001_R1_001.fq ../raw/lane1/test/
+</code></pre><h4 class="mume-header" id="demultiplexing-fastq-file-with-its-barcodes-info">Demultiplexing fastq file with its barcodes info</h4>
+
+<p>Instead of making a huge command line, it may be easier to make variables and assign them values.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    raw_dir=../raw/lane1/test
+    barcodes_file=../info/barcodes.lane1.tsv
+    process_radtags -p $raw_dir -b $barcodes_file -o ./ -e sbfI -c -q -r
+</code></pre><ul>
+<li>This takes a little while to run, so be patient.</li>
+<li>Note instead of using relative paths, you can also add absolute paths to your &quot;raw_dir&quot; and &quot;barcodes_file&quot;.</li>
+<li>Both &quot;.fq&quot; and &quot;fq.gz&quot; files can be used to perform demultiplexing.</li>
+</ul>
+<p>And this is my output:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Processing single-end data.
+Using Phred+33 encoding for quality scores.
+Found 1 input file(s).
+Searching for single-end, inlined barcodes.
+Loaded 24 barcodes (6bp).
+Will attempt to recover barcodes with at most 1 mismatches.
+Processing file 1 of 1 [lane1_NoIndex_L001_R1_001.fq]
+  Processing RAD-Tags...1M...2M...3M...
+  3888416 total reads; -321836 ambiguous barcodes; -78281 ambiguous RAD-Tags; +83085 recovered; -352260 low quality reads; 3136039 retained reads.
+Closing files, flushing buffers...
+Outputing details to log: &apos;./process_radtags.Example.log&apos;
+
+3888416 total sequences
+ 321836 barcode not found drops (8.3%)
+ 352260 low quality read drops (9.1%)
+  78281 RAD cutsite not found drops (2.0%)
+3136039 retained reads (80.7%)
+</code></pre><p>There are two types of files that come from this command.<br>
+First, you get a log of the barcodes provided and the number of reads that match to each.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    less process_radtags.Example.log
+</code></pre><p>Second, you get a list of samples, e.g. sj_1483.01.fq.gz or sj_1484.02.fq.gz<br>
+How many reads are in sj_1483.01.fq.gz?</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    zcat sj_1483.01.fq.gz | grep &apos;^@&apos; | wc -l
+</code></pre><p>Do the sequences in these files have the barcodes like the original sequences or have they been removed?</p>
+<h3 class="mume-header" id="assignment-for-lab-6">Assignment for Lab 6</h3>
+
+<p><strong>Please upload your screen shorts of command lines and outputs of demutiplexing lane2_NoIndex_L002_R1_001.fq with barcodes.lane2.tsv file. Note your screen shots should include your username in the terminal</strong></p>
+<h3 class="mume-header" id="reference">Reference</h3>
+
+<p>These lab materials are from the following papers and website:</p>
+<ol>
+<li><a href="https://www.nature.com/articles/nprot.2017.123">Rochette, N.C. and Catchen, J.M., 2017. Deriving genotypes from RAD-seq short-read data using Stacks. Nature Protocols, 12(12), pp.2640-2659.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/23718143/">The population structure and recent colonization history of Oregon threespine stickleback determined using restriction-site associated DNA-sequencing. Mol. Ecol. 22, 2864&#x2013;2883 (2013).</a></li>
+<li><a href="https://docs.computecanada.ca/wiki/Utiliser_des_modules/en">https://docs.computecanada.ca/wiki/Utiliser_des_modules/en</a></li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

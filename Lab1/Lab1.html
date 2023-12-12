@@ -1,0 +1,459 @@
+<!DOCTYPE html><html><head>
+      <title>Lab1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/haiyangchang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.0/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="biol3300-lab1-f21">BIOL*3300 Lab1 F21</h1>
+
+<h1 class="mume-header" id="getting-started-with-unix-on-compute-canada">Getting started with UNIX on Compute Canada</h1>
+
+<h2 class="mume-header" id="prerequisites">Prerequisites</h2>
+
+<p>You should already have a <strong>Compute Canada Graham account</strong>.</p>
+<h3 class="mume-header" id="for-macs-logging-in">For Macs - Logging in</h3>
+
+<ol>
+<li>Open a terminal (under Applications/Utilities on a Mac).</li>
+<li>Type your graham account into the terminal:<pre data-role="codeBlock" data-info="console" class="language-console"><code>ssh username@graham.computecanada.ca
+</code></pre><strong>where &apos;username&apos; is replaced with your username.</strong> Press return.</li>
+<li>Type in your password. <strong>Note no characters will display when you are typing.</strong> Press return after your password and all the following commands.<br>
+<img src="./cc.jpg" alt="putty3"></li>
+</ol>
+<h3 class="mume-header" id="for-windows-logging-in">For Windows - Logging in</h3>
+
+<p>Windows needs a terminal to connect with, we recommend you install <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a></p>
+<ol>
+<li>Nevigate to package files and choose a version of .msi link based on your operating system.<br>
+<img src="./putty.jpeg" alt="putty"></li>
+<li>Download PuTTY with default options (left click on next).</li>
+<li>Set Putty Host Name field as following: Enter the server name in Host Name, <strong>host name is your Graham account.</strong></li>
+<li>Make sure the Connection type is SSH.<br>
+<img src="./putty2.png" alt="putty2"></li>
+<li>Click Open and will ask you for your user name and password. <strong>Note no characters will display when you are typing password.</strong> Press return after your password and all the following commands.<br>
+<img src="./putty3.png" alt="putty3"></li>
+</ol>
+<h2 class="mume-header" id="introduction-to-unix-and-command-line">Introduction to Unix and Command Line</h2>
+
+<div style="text-align: justify"> Unix is very likely the most foundational skillset we can develop for bioinformatics (and much more than bioinformatics). Many of the most common and powerful bioinformatics approaches happen in this text-based environment, and having a solid foundation here can make everything we&#x2019;re trying to learn and do much easier. </div>
+<h3 class="mume-header" id="why-unix">Why Unix?</h3>
+
+<div style="text-align: justify"> The Unix operating system has been around since 1969. Back then there was no such thing as a graphical user interface. You typed everything. It may seem archaic to use a keyboard to issue commands today, but it&#x2019;s much easier to automate keyboard tasks than mouse tasks. Increasingly, the raw output of biological research exists usually in the form of large text files. Unix is particularly suited to working with such files and has several powerful (and flexible) commands that can process your data for you. </div>
+<h3 class="mume-header" id="what-is-the-command-line">What is the command line?</h3>
+
+<ul>
+<li>Command line interface is a tool into which one can type commands to perform tasks.</li>
+<li>The user interface that accepts the typed responses and displays the data on the screen is called a shell.</li>
+<li>An all-text display (most of the time your mouse doesn&#x2019;t work).</li>
+</ul>
+<h3 class="mume-header" id="getting-started-with-your-shell">Getting started with your shell</h3>
+
+<p>After logging into Compute Canada Graham account, system messages are often displayed, followed by the &quot;prompt&quot;. A prompt is a short text message at the start of the command line and ends with $ in bash shell, commands are typed after the prompt.<br>
+<img src="./shell.jpg" alt="shell"><br>
+For now, we will enter single commands through the terminal. <strong>If you lose the command prompt (such as a greater than sign &gt;), press control and c at the same time. This is an &quot;interrupt&quot; command that will likely bring the prompt back.</strong></p>
+<h3 class="mume-header" id="command-line-basics">Command line basics</h3>
+
+<p>First some basics - how to look at your surroundings. We use <strong>pwd</strong> command (for print working directory), which is to find out what the path is for the directory we are sitting in.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    pwd
+</code></pre><p>We use the <strong>ls</strong> command (for list), we can see what directories and files are in the current directory we are sitting in. <strong>A single dot (.) refers to the current directory</strong>. If you are in <em>this</em> directory, you can omit it.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls .
+    ls
+</code></pre><p>Each command can act as a basic tool, or you can add &apos;options&apos; or &apos;flags&apos; that modify the default behavior of the tool. Let&#x2019;s try one, and see what the man page for the &apos;list files&apos; command &apos;ls&apos; is like.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls -l
+</code></pre><p>how do I know which options do what?</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    man ls
+</code></pre><p>Use <strong>space</strong> to move down and <strong>q</strong> to quit this manual page.</p>
+<h3 class="mume-header" id="the-unix-directory-structure">The Unix directory structure</h3>
+
+<p>Your computer stores file locations in a hierarchical structure. You are likely already used to navigating through this stucture by clicking on various folders (also known as directories) in a Windows Explorer window or a Mac Finder window. Just like we need to select the appropriate files in the appropriate locations there (in a GUI), we need to do the same when working at a command-line interface. What this means in practice is that each file and directory has its own &quot;address&quot;, and that address is called its &quot;path&quot;. Here is an image of an example file-system structure:<br>
+<img src="./dir.jpg" alt="dir"><br>
+Usually, <strong>/home</strong> is where the user accounts reside, ie. user&#x2019;s &quot;home&quot; directory. For example, for a user that has a username of &quot;hchang02&quot;: their home directory is <strong>/home/hchang02</strong>. It is the directory that a user is located after starting a new shell or logging into Compute Canada Graham server.</p>
+<h3 class="mume-header" id="moving-around">Moving around</h3>
+
+<p>The filesystem you&#x2019;re working on is like the branching root system of a tree. The top level, right at the root of the tree, is called the &apos;root&apos; directory, specified by <strong>/</strong> which is the divider for directory addresses, or &apos;paths&apos;. We can also move into the directory containing the file we want to work with by using the <strong>cd</strong> command (change directory).</p>
+<p>Go to the root directory, list directories and files, and print working directory:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd /
+    ls
+    pwd
+</code></pre><p>Go back to your home directory, you have three ways: <strong>(Note you should replace username to your username)</strong></p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd /home/username
+    pwd
+</code></pre><p>The tilde <strong>~</strong> is a short form of a user&#x2019;s home directory.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ~
+    pwd
+</code></pre><p>No effect? that&apos;s because by itself it sends you home.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd
+    pwd
+</code></pre><p>Now if you run <strong>ls</strong> command, you will see a directory called <strong>scratch</strong>. <strong>Note in the following labs, we will run all the commands and store all the files in this directory.</strong> The scratch filesystem on Compute Canada is intended as temporary, fast storage for data being used during job execution. And we will talk more when we introduce Compute Canada officially.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls
+    cd scratch
+    ls
+    pwd
+</code></pre><p><strong>You can always check your current directory with pwd.</strong></p>
+<h3 class="mume-header" id="create-and-destroy">Create and Destroy</h3>
+
+<p>Let&apos;s create a directory &quot;Biol3300&quot; in your scratch directory with the command <strong>mkdir</strong> (for make directory):</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    mkdir Biol3300
+    cd Biol3300
+    pwd
+</code></pre><p>Two dots <strong>..</strong> refers to the directory one level up. Directories can be deleted with <strong>rmdir</strong> (for remove directory):</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ..
+    ls
+    rmdir Biol3300
+    ls
+</code></pre><p>Let&apos;s create a directory &quot;Lab1&quot; inside the directory &quot;Biol3300&quot; with the option -p. The option -p tells unix to make the directory and if required all parent directories.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    man mkdir
+    mkdir -p Biol3300/Lab1
+    cd Biol3300/Lab1
+    pwd
+    cd ../..
+</code></pre><p>The command line is a little more forgiving when trying to delete a directory. If the directory is not empty, rmdir will give us an error.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    rmdir Biol3300
+</code></pre><p>Let&apos;s go back to our Biol3300 directory. The echo command simply &quot;echoes&quot; back the contents you provide then we redirect (<strong>&gt;</strong>) them to a file.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd Biol3300
+    echo &apos;Hello, world!&apos; &gt; first.txt
+</code></pre><p>Command <strong>cat</strong> means &apos;concatenate&apos;</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cat first.txt first.txt first.txt &gt; second.txt
+    cat second.txt
+</code></pre><p>Another standard useful program for viewing the contents of a file is less. This opens a searchable, read-only program that allows us to scroll through the document:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    less second.txt
+</code></pre><p>To exit the less program, press the <strong>&quot;q&quot;</strong> key.</p>
+<p>To create a file, you can also use <strong>touch</strong>, which creates empty files.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    touch newfile.txt
+    less newfile.txt    
+</code></pre><p><strong>By convention files start with lower case letters and directories start with upper case.</strong></p>
+<h3 class="mume-header" id="absolute-vs-relative-path">Absolute vs relative path</h3>
+
+<p>There are two ways to specify the path (address) of the file we want to do something to:</p>
+<ul>
+<li>An absolute path is an address that starts from an explicitly specified location: either the &quot;root&quot; / or the &quot;home&quot; ~/ location. (Side note, because we also may see or hear the term, the &quot;full path&quot;, is the absolute path that starts from the &quot;root&quot; /.)</li>
+<li>A relative path is an address that starts from wherever directory in which we currently are.</li>
+</ul>
+<p>Relative path (start here, down through one level up, Biol3300 and Lab1):</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    pwd 
+    cd ../Biol3300/Lab1/
+    pwd
+</code></pre><p>Absolute path (start at root, take steps): <strong>(Note you should replace username to your username)</strong></p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    pwd
+    cd /home/username/scratch/Biol3300/Lab1/
+    pwd
+</code></pre><h3 class="mume-header" id="copying-moving-and-renaming-files">Copying, moving, and renaming files</h3>
+
+<p>The commands <strong>cp</strong> and <strong>mv</strong> (copy and move) have the same basic structure. They both require two positional arguments: the first is the file we want to act on, and the second is where we want it to go (which can include the name we want to give it).</p>
+<p>To see how this works, let&#x2019;s make a copy of &quot;first.txt&quot; in the Biol3300 directory:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cd ..
+    pwd
+    ls
+    cp first.txt first_copy.txt
+    ls
+</code></pre><p>By just giving the second argument a name and nothing else (meaning no path in front of the name), we are implicitly saying we want it copied to where we currently are.</p>
+<p>To make a copy and put it somewhere else, like in our subdirectory &quot;<strong>Lab1</strong>&quot;, we could change the second positional argument using a relative or absolute path. (Remember a path is &quot;relative&quot; because it starts from where we currently are):</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls Lab1/
+    cp first.txt Lab1/first_copy.txt
+    ls Lab1/
+</code></pre><div style="text-align: justify"> We also did something different here with both ls. We gave ls a directory name, and ls listed the contents of that directory. In fact, we can provide any path to ls and it will give us the contents of that directory. Although you are peaking into different directories, your position in the file hierarchy has not changed. Similarly, you can copy into any place in the filesystem (assuming you have permission). This ability to quickly access any directory or file while working in a different directory is a major advantage of Unix.</div> 
+<p>The <strong>mv</strong> command is used to move files. Let&#x2019;s move the &quot;newfile.txt&quot; file into the &quot;Lab1&quot; subdirectory:</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    mv newfile.txt Lab1/
+    ls
+    ls Lab1/
+</code></pre><p>To copy it to that subdirectory but keep the same name, we could type the whole name out, but we can also just provide the directory but leave off the file name. Note we can also copy file to our current directory with a single dot.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    cp second.txt Lab1/
+    ls
+    ls Lab1/
+    cp Lab1/newfile.txt .
+    ls
+</code></pre><p>The mv command is also used to rename files. This may seem strange at first, but remember that the path (address) of a file actually includes its name too (otherwise everything in the same directory would have the same path).</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls
+    mv second.txt second_old.txt
+    ls
+</code></pre><p>To delete files there is the rm command (remove). This requires at least one argument specifying the file we want to delete. <strong>But again, caution is warranted. In UNIX, you delete a file with the command rm filename. The file is not in &quot;Trash&quot;. It is deleted forever! There will be no confirmation or retrieval from a waste bin afterwards.</strong></p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls
+    rm second_old.txt
+    ls
+</code></pre><p>A safe way to use rm is to use the -i option. -i is highly recommended whenever rm is used.The computer prompts you to see if you are sure about the removal.The command &quot;rm -i second.txt&quot; results in: remove second.txt? To remove it, you would type, &quot;y&quot;.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>    ls
+    rm -i second.txt
+    ls
+</code></pre><p><strong>Please be very careful using rm and always use -i.</strong></p>
+<h3 class="mume-header" id="bonus-round-tab-completion-is-our-friend">BONUS ROUND: Tab-completion is our friend!</h3>
+
+<div style="text-align: justify"> Tab-completion is a huge time-saver and helps prevent mistakes. If we are trying to specify a file that&#x2019;s in our current working directory, we can begin typing its name and then press the tab key to complete it. If there is only one possible way to finish what we&#x2019;ve started typing, it will complete it entirely for us. If there is more than one possible way to finish what we&#x2019;ve started typing, it will complete as far as it can, and then hitting tab twice quickly will show all the possible options. If tab-complete does not do either of those things, then we are either confused about where we are, or we&#x2019;re confused about where the file is that we&#x2019;re trying to do something to. Using Tab completion is great!</div>
+<h3 class="mume-header" id="reference">Reference</h3>
+
+<p>These lab materials are from the following tutorials:</p>
+<ol>
+<li><a href="https://j.p.gogarten.uconn.edu/mcb5472_2018/current.pdf">https://j.p.gogarten.uconn.edu/mcb5472_2018/current.pdf</a></li>
+<li><a href="https://ucdavis-bioinformatics-training.github.io/2020-Intro_Single_Cell_RNA_Seq/prerequisites/cli/command-line-intro">https://ucdavis-bioinformatics-training.github.io/2020-Intro_Single_Cell_RNA_Seq/prerequisites/cli/command-line-intro</a></li>
+<li><a href="https://astrobiomike.github.io/unix/getting-started">https://astrobiomike.github.io/unix/getting-started</a></li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
